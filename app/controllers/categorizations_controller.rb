@@ -69,6 +69,7 @@ class CategorizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def categorization_params
-      params.require(:categorization).permit(:product_id, :category_id => [])
+      params[:categorization][:category_id] ||= []
+      params.require(:categorization).permit(:product_id, :category_id: [])
     end
 end
