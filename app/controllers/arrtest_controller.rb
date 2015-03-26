@@ -22,5 +22,5 @@ class ArrtestController < ApplicationController
 end
 
 def arrtest_params
-  params.require(:arrtest).permit(:nums: [])
+  params.require(:arrtest).permit(:nums => [])
 end

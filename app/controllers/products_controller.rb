@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
 
-      binding.pry
 
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Category was successfully updated.' }
@@ -72,6 +71,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name)
+      params.require(:product).permit(:name, :category_ids => [])
     end
 end
